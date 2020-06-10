@@ -1,0 +1,79 @@
+<div *ngIf="loaded" class="loader" >
+    <img src="assets/images/loading.gif" width="30%" height="30%" alt="loading">
+</div>
+<div *ngIf="!loaded">
+<div class="row col-12 pt-5">
+    <div class="col-md-10"></div>
+    <div class="col-md-1"><img src="../assets/images/atos-logo-menu-bar.png" alt="atos logo" class="atos_logo"></div>
+ </div>
+<div class='col-12 row pt-5'>
+          <div class="col-md-4"></div>
+          <div class="col-md-5">
+              <nb-card class="login-card pl-3 pt-2 pr-3 pb-2">
+                  <nb-card-header class="header pt-2 pb-2">
+                      <h4 class="modal-title" id="modal-basic-title">Login</h4>
+                  </nb-card-header>
+                  <nb-card-body class="login-card-body mt-2">
+                      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                          <div class="form-group">
+                              <label>Username</label>
+                              <input type="text" placeholder="Username" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" autofocus/>
+                              <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                                  <div *ngIf="f.userName.errors.required">Username is required</div>
+                                  <div *ngIf="f.userName.errors.email">Username must be a valid email address</div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" (blur)="onBlur($event)" placeholder="Password" formControlName="passWord" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passWord.errors }" />
+                              <div *ngIf="submitted && f.passWord.errors" class="invalid-feedback">
+                                  <div *ngIf="f.passWord.errors.required">Password is required</div>
+                                  <div *ngIf="f.passWord.errors.minlength">Password must be at least 6 characters</div>
+                              </div>
+                             
+                              <div *ngIf="flag && loginForm.status=='VALID' " class="pwd_mismatch">
+                                  <div >Wrong Credentials. Enter correct credentials and login again.</div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row d-flex justify-content-end">
+                                
+                                <div class="col-3">
+                                    <label>Organisation</label>
+                                </div>
+                                <div class="col-7">                                
+                                        <select class="form-control choiceSel" (change)="setOrg($event)">
+                                                                           
+                                            <option value="0" [selected]="true">Select Organisation</option>
+                                            <option [value]="og['key']" *ngFor="let og of orgs; let i= index">{{og['val']}}</option>
+                                            
+                                          </select>
+                                </div>
+                            </div>                                
+                          </div>
+                          <div class="form-group">
+                            <div class="row d-flex justify-content-end">
+                                <div class="col-3">
+                                    <label>Project</label>
+                                </div>
+                                <div class="col-7">                                      
+                                    <select class="form-control choiceSel" (change)="setProj($event)">
+                                                                  
+                                        <option value="0" [selected]="true">Select Project</option>
+                                        <option [value]="proj.title" *ngFor="let proj of projects; let i= index">{{proj.title}}</option>
+                                    </select>
+                                </div>
+                            </div>                                
+                          </div>
+                          <div class="form-group text-right">
+                              <button type="submit" [disabled]="loading" class="col-3 btn btn-primary">login</button>
+  
+                              <button [disabled]="loading" class="col-3 cancel btn btn-primary">Cancel</button>
+                          </div>
+                      </form>
+                  </nb-card-body>
+              </nb-card>
+          </div>
+  <!-- <div class="col-md-4"></div> -->
+  </div>
+  </div>

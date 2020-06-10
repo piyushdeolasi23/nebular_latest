@@ -1,0 +1,14 @@
+// @nebular theming framework
+@import '~@nebular/theme/styles/theming';
+// @nebular out of the box themes
+@import '~@nebular/theme/styles/themes';
+// which themes you what to enable (empty to enable all)
+$nb-enabled-themes: (default, cosmic, corporate);
+$nb-themes: nb-register-theme(( // app wise variables for each theme
+sidebar-header-gap: 2rem, sidebar-header-height: initial, layout-content-width: 1400px, font-main: Roboto, font-secondary: Exo, switcher-background: #ebeff5, switcher-background-percentage: 50%, drops-icon-line-gadient: -webkit-linear-gradient(#01dbb5, #0bbb79), ), default, default);
+$nb-themes: nb-register-theme(( // app wise variables for each theme
+sidebar-header-gap: 2rem, sidebar-header-height: initial, layout-content-width: 1400px, font-main: Roboto, font-secondary: Exo, switcher-background: #4e41a5, switcher-background-percentage: 14%, drops-icon-line-gadient: -webkit-linear-gradient(#a258fe, #7958fa), ), cosmic, cosmic);
+$nb-themes: nb-register-theme(( // app wise variables for each theme
+sidebar-header-gap: 2rem, sidebar-header-height: initial, layout-content-width: 1400px, font-main: Roboto, font-secondary: Exo, switcher-background: #2b2d34, switcher-background-percentage: 14%, drops-icon-line-gadient: -webkit-linear-gradient(#e9e8eb, #a7a2be), //vishal - header changes
+header-bg: #0066A1, layout-padding: 0.25rem 0.25rem 0.15rem 0.15rem, btn-primary:#3267a1, btn-success-bg:#07a71d, card-padding: 0.15rem 0.15rem 0.15rem 0.15rem, card-margin: 0.15rem 0.15rem 0.15rem 0.15rem, layout-fg:#0e0e0e, //For syntbot brnading changes
+header-font-family:Verdana, layout-font-family:Verdana, footer-bg:#0e0e0e, footer-padding:1.0rem), corporate, corporate);

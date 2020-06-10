@@ -1,0 +1,82 @@
+<div class="header-container" [class.left]="position === 'normal'" [class.right]="position === 'inverse'">
+    <div class="logo-containter">
+        <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
+        <div class="logo" (click)="goToHome()">Facial<span> Recognition</span></div>
+    </div>
+
+    <!-- <ngx-theme-switcher></ngx-theme-switcher> -->
+</div>
+
+<div class="header-container">
+    <!-- <ngx-layout-direction-switcher></ngx-layout-direction-switcher> -->
+    <!-- <nb-actions
+    size="medium"
+    [class.right]="position === 'normal'"
+    [class.left]="position === 'inverse'">
+    <nb-action icon="nb-gear" class="toggle-layout" (click)="toggleSettings()"></nb-action>
+    <nb-action *nbIsGranted="['view', 'user']" >
+      <nb-user [nbContextMenu]="userMenu" [name]="user?.name" [picture]="user?.picture"></nb-user>
+    </nb-action>
+    <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
+    <nb-action class="control-item" icon="nb-email"></nb-action>
+    <nb-action class="control-item">
+      <nb-search type="rotate-layout" (click)="startSearch()"></nb-search>
+    </nb-action>
+  </nb-actions> -->
+
+    <!-- <div class="row mr-1">
+    <div class=""><span class="profile_lbl d-flex mt-3">Selected Risk Profile - </span></div>
+    <div class="col">
+        
+        <select class="form-control choiceSel" id="risk_p" (change)="setChoice($event)">
+            <option value="high" >High Risk Profile</option>
+
+            <option value="med" [selected]="true">Medium Risk Profile</option>
+            <option value="low">Low Risk Profile</option>
+          </select>
+    </div>
+  </div>
+  <button class="btn-sm btn btn-outline-primary btn_mar m-2" (click)="showImage(imgref)"><i class="ion-arrow-expand" style="font-size:35px;color:cornsilk;"></i></button>-->
+    <button class="btn-sm btn btn-outline-primary btn_lg m-2" (click)="logout()"><i class="ion-power" style=""></i></button>
+    <div class="mt-1 tooltiptext">Logout</div>
+</div>
+
+
+<!-- for show image modal-->
+<!-- <ng-template #imgref let-c="close" let-d="dismiss" class="modal_wtd modal_sz">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{rsk_obj.title}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body mx-auto align-middle">
+    
+        <img class="" style="width: max-content;" src="{{rsk_obj.img_src}}" alt="">
+      
+    </div>
+
+</ng-template> -->
+<!-- 
+<ng-template #imgref let-c="close" let-d="dismiss" class="modal_wtd modal_sz">
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Risk Profile Thresholds</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  
+  <div class="modal-body mx-auto align-middle">
+      <div class="col-12">
+          <p>
+              Organizations need to do risks and cost optimizations to make balanced business decisions. Depending on customer demographics different risk profiles can be applied. Model score decision thresholds give control to business for simulating different risk scenarios and get AI recommendations based on business risk appetite.
+          </p>
+          <p><strong>Scenario Example: </strong>
+            In geographies with higher crime rate or for large amount loans, business would want to keep low risk profile. AI model can be tuned to recommend low threshold suspicious cases, leading to larger percentage of cases to be investigated manually though with higher processing cost per loan.
+          </p>
+      </div>  
+      <img class="" style="width: 100%; height: 90%;" src="assets/Risk_profile_f1_new.png" alt="">
+    
+  </div>
+
+</ng-template> -->
